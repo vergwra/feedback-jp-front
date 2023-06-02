@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "../pages/home";
 import Questionario from "../pages/questionario";
 import QuestionCreator from "../pages/questionsCreator";
+import Results from "../pages/results";
 
 const auth_routes = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const auth_routes = createBrowserRouter([
     },{
         path: "/criar-perguntas",
         element: <QuestionCreator/>
+    },
+    {
+        path: "/resultados",
+        element: <Results/>
     },
 ])
 
