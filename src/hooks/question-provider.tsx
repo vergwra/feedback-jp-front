@@ -13,10 +13,15 @@ interface IAddQuestion {
     content: string;
 }
 
+interface IRemoveQuestion {
+    question_id: string;
+}
+
 interface QuestionContextData {
     questions: IQuestion[]
     getAllQuestions(): Promise<IQuestion[]>
     addQuestion(question: IAddQuestion): Promise<IQuestion[]>
+    removeQuestion(question: IRemoveQuestion): Promise<void>
 }
 
 
@@ -62,8 +67,21 @@ export function QuestionProvider({ children }: IQuestionProvider) {
         return questions;
     }, [questions, token])
 
+    const removeQuestion = useCallback(async ({ question_id }: IRemoveQuestion) => {
+        const authorization = "Bearer " + token;
+
+        const header = {
+            headers: { 'Authorization': authorization }
+        }
+
+        const _questions = questions.filter((q) => q.id !== question_id)
+        setQuestions(_questions);
+        await api.delete("/quiz/question/" + question_id, header);
+
+    }, [questions, token])
+
     return (
-        <QuestionContext.Provider value={ { getAllQuestions, questions, addQuestion } }>
+        <QuestionContext.Provider value={ { getAllQuestions, questions, addQuestion, removeQuestion } }>
             { children }
         </QuestionContext.Provider>
     );

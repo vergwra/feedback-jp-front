@@ -7,7 +7,7 @@ import Header from '../components/header';
 
 function QuestionCreator() {
     const { signOut } = useAuth();
-    const { getAllQuestions, questions, addQuestion } = useQuestion();
+    const { getAllQuestions, questions, addQuestion, removeQuestion } = useQuestion();
     
     const [addQuestionContent, setAddQuestionContent] = useState("");
 
@@ -21,6 +21,10 @@ function QuestionCreator() {
 
     async function handleAddQuestion() {
       await addQuestion({ content: addQuestionContent })
+    }
+
+    async function handleRemoveQuestion(id: string) {
+      await removeQuestion({ question_id: id });
     }
 
   return (
@@ -44,7 +48,7 @@ function QuestionCreator() {
               return(
                 <div className='question'>
                   <p id={question.id}>{question.content}</p>
-                  <button className='button2'>x</button>
+                  <button onClick={() => handleRemoveQuestion(question.id)} className='button2'>x</button>
                 </div>
                 )
               })
