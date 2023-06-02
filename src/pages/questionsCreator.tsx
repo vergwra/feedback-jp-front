@@ -52,7 +52,6 @@ function QuestionCreator() {
                 </div>
                 )
               })
-              
             }
       </div>
         </div>

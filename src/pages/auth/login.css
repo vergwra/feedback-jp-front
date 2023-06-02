@@ -1,5 +1,6 @@
 .mainContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgb(241, 83, 255);
+    height: 100vh;
 }
