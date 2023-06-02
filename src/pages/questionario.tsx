@@ -19,9 +19,10 @@ function Questionario() {
     const [currentQuestion, setCurrentQuestion] = useState<ICurrentQuestion>({} as ICurrentQuestion);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentResponses, setCurrentResponses] = useState<IQuestionResponse[]>([]);
-    const [note, setNote] = useState(1);
+    const [note, setNote] = useState(-1);
     const [obs, setObs] = useState("");
     const [finished, setFinished] = useState(false);
+    const [active, setActive] = useState(-1);
 
     async function startQuestionario() {
         const _questions = await getAllQuestions();
@@ -55,10 +56,14 @@ function Questionario() {
         }])
 
         setObs("")
-        setNote(1)
+        setNote(-1)
     }, [currentQuestion.id, currentResponses, note, obs])
 
     const handleNextQuestion = useCallback(async () => {
+        if (note === -1) {
+            return;
+        }
+
         setCurrentIndex(currentIndex + 1)
         if (currentIndex > questions.length) {
             return;
@@ -88,13 +93,16 @@ function Questionario() {
 
     function setNoteToTree() {
         setNote(3)
+        setActive(0)
     }
     function setNoteToTwo(){
         setNote(2)
+        setActive(1)
     }
 
     function setNoteToOne(){
         setNote(1)
+        setActive(2)
     }
     if (finished) {
         return (
@@ -114,20 +122,20 @@ function Questionario() {
                     <div className='middleQuestion'>
                             <h1 className='title'>{currentQuestion?.content}</h1>
                             <div className='buttons'>
-                                    <button onClick={(setNoteToTree)}>
+                                    <button className={`${note === 3 ? "active-button" : "unactive-button"}`} onClick={(setNoteToTree)}>
                                         <img src='happy.png' ></img>
                                     </button>
-                                <button onClick={setNoteToTwo}>
+                                <button className={`${note === 2 ? "active-button" : "unactive-button"}`} onClick={setNoteToTwo}>
                                     <img src='satisfied.png'></img>
                                 </button>
-                                <button onClick={setNoteToOne}>
+                                <button className={`${note === 1 ? "active-button" : "unactive-button"}`} onClick={setNoteToOne}>
                                 <img src='sad.png'></img>
                                 </button>
                             </div>
                             <input value={obs} onChange={e => setObs(e.target.value)} placeholder='observacao'></input>
                             <div className='footer'>
                                 <p>{`${currentIndex + 1}/${questions.length}`}</p>
-                                <button className='buttonNext' onClick={handleNextQuestion}>Próxima</button>
+                                <button className='buttonNext' onClick={handleNextQuestion}>{currentIndex + 1 === questions.length ? "Finalizar" : "Proxima"}</button>
                             </div>
                         </div>    
                     </div>
