@@ -21,6 +21,7 @@ function QuestionCreator() {
 
     async function handleAddQuestion() {
       await addQuestion({ content: addQuestionContent })
+      setAddQuestionContent("")
     }
 
     async function handleRemoveQuestion(id: string) {
@@ -38,7 +39,7 @@ function QuestionCreator() {
       <div className='middle'>
           <h2>Adicione sua pergunta:</h2>
         <div className='questionAdd'>
-          <input className='input' onChange={(e) => setAddQuestionContent(e.target.value)} placeholder='escreva a questão'></input>
+          <input className='input' value={addQuestionContent} onChange={(e) => setAddQuestionContent(e.target.value)} placeholder='escreva a questão'></input>
           <button className='button1' onClick={handleAddQuestion}>Adicionar</button>
         </div>
         <h2>Perguntas:</h2>
