@@ -1,0 +1,21 @@
+.subreader{
+    height: 5.5rem;
+    background-color: #0B5797;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+}
+a{
+    background-color:#08375F;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+}

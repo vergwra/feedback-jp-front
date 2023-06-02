@@ -1,0 +1,14 @@
+.reader {
+    height: 4rem;
+    background-color:  #0D71C4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1.5rem;
+  }
+.reader img:last-child {
+    height: 40%;
+} 
+.reader img:first-child {
+    height: 100%;
+}

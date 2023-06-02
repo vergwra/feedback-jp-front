@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { AuthProvider } from './hooks/auth-provider';
+import { QuestionProvider } from './hooks/question-provider';
+import Header from './components/header';
 
 
 const root = ReactDOM.createRoot(
@@ -11,7 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <App></App>
+      <QuestionProvider>
+
+        <App></App>
+      </QuestionProvider>
     </AuthProvider>
   </React.StrictMode>
 );

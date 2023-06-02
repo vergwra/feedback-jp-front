@@ -4,9 +4,11 @@ import AuthRoutes from "./auth-routes";
 export default function Routes() {
     const { token } = useAuth();
 
+    console.log(token)
+
     if (token) {
         return (
-            <MainRoutes></MainRoutes>
+            <MainRoutes/>
         )
     }
     else {

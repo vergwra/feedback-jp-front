@@ -1,0 +1,39 @@
+
+.reader {
+    height: 4rem;
+    background-color:  #0D71C4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1.5rem;
+  }
+.reader img:last-child {
+    height: 40%;
+} 
+.reader img:first-child {
+    height: 100%;
+}
+
+.subreader{
+    height: 5.5rem;
+    background-color: #0B5797;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 3rem;
+
+
+}
+.subreader a{
+    color: white;
+    margin: 0.5rem;
+
+}
+.background img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.background{
+    background-color: #08375F;
+}

@@ -1,0 +1,99 @@
+.middle{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../public/doctorsQuestions.png");
+    height: 100vh;
+
+}
+h1{
+    color: white;
+}
+.buttons button{
+    border: 0;
+    background-color: rgba(250, 235, 215, 0);
+
+}
+.backgroundQuestion{
+    background-color: #05152495;
+    border-radius: 20px;
+    flex-direction: column;
+    display: flex;
+    border: 50rem;
+    justify-content: center;
+    align-items: center;
+    font-size:large;
+    margin-bottom: 2rem;
+    width: 50rem;
+    background-size: auto;
+    padding: 0rem 2rem;
+}
+
+input{
+    background-color: #17588d70;
+    border: none;
+    height: 4rem;
+    width:30rem;
+    border-radius: 10px;
+    padding: 0 1rem;
+    color: white;
+    border: solid;
+    border-style: none;
+}
+input:focus{
+    outline: 0;
+}
+
+button{
+    color: white;
+    background-color: #17588d70;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border: 0;
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.middleQuestion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backgroundQuestion2{
+    background-color: #05152495;
+    border-radius: 20px;
+    flex-direction: column;
+    display: flex;
+    border: 50rem;
+    justify-content: center;
+    align-items: center;
+    font-size:large;
+    margin-bottom: 2rem;
+    width: 50rem;
+    height: 30rem;
+    padding: 0rem 2rem;
+}

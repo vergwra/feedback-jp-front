@@ -1,20 +1,24 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "../pages/auth/login";
-import Register from "../pages/auth/register";
+import Home from "../pages/home";
+import Questionario from "../pages/questionario";
+import QuestionCreator from "../pages/questionsCreator";
 
-const main_routes = createBrowserRouter([
+const auth_routes = createBrowserRouter([
     {
         path: "/",
-        element: <Login/>
+        element: <Home/>
     },
     {
-        path: "register",
-        element: <Register/>
-    }
+        path: "/questionario",
+        element: <Questionario/>
+    },{
+        path: "/criar-perguntas",
+        element: <QuestionCreator/>
+    },
 ])
 
-export default function AuthRoutes() {
+export default function MainRoutes() {
     return (
-        <RouterProvider router={main_routes}></RouterProvider>  
+        <RouterProvider router={auth_routes}></RouterProvider>  
     )
 }
