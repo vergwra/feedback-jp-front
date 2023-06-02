@@ -1,6 +1,43 @@
-.mainContainer {
+img{
+    background-color: #08375F;
+}
+a{
+    color: white;
+    background-color: #00000000;
+}
+
+.backgroundLogin{
+    background-color: #0d72c4;
+    background-color: #fffffff0;
+    background-color: #03030308;
+    background-color: #0000003f;
+    border-radius: 35px 0 0 35px;
+    flex-direction: column;
+    display: flex;
+    border: 50rem;
+    justify-content: center;
+    align-items: self-start;
+    margin: 3rem;
+    font-size:large;
+    margin-bottom: 2rem;;
+    width: 50rem;
+    height: 30rem;
+    padding: 0rem 2rem;
+    gap: 1rem;
+}
+
+
+.middle{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    background-color: rgb(241, 83, 255);
+    background-image: url("../../../public/photo-background1@2x.png");
+    background-color: #08375F;
     height: 100vh;
+    background-size: cover;
+}
+
+.loginTitle{
+    display: flex;
+    align-items: self-start;
 }
