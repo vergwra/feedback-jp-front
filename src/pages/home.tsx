@@ -30,7 +30,7 @@ function Home() {
           <button onClick={handleSignOut}>Sign out</button>
           <a href='#'>Tela de avaliação</a>
           <a href='/criar-perguntas'>Criação de perguntas</a>
-          <a href='#'>Resultados</a>
+          <a href='/resultados'>Resultados</a>
         </div>
         <div className='background'>
           <img src='photo-background@2x.png'></img>
