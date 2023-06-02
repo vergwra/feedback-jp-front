@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useQuestion } from '../hooks/question-provider';
 import api from '../services/api';
 import { RadialChart } from 'react-vis';
+import "./results.css"
 
 interface ICurrentQuestion {
     id: string;
@@ -34,6 +35,7 @@ function Results() {
             {
                 results?.map(r => {
                     return (
+                    
                         <div>
                             <h1>{r.question}</h1>
                             <RadialChart width={300} showLabels={true} labelsAboveChildren={true}  height={300} data={[
