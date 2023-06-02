@@ -58,9 +58,14 @@ button{
     transition: transform 0.2s;
 }
 
-button:hover {
+.unactive-button:hover {
     transform: scale(1.1);
 }
+
+.active-button {
+    transform: scale(1.2);
+}
+
 .buttons{
     display: flex;
     justify-content: center;
