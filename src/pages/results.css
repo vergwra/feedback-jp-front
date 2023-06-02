@@ -19,3 +19,43 @@ a{
     text-align: center;
     align-items: center;
 }
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #08375F;
+    background-image: url("../../public/questionCreator.png");
+    background-size: cover;
+}
+
+.carousel {
+    object-fit: contain;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0rem 5rem;
+}
+
+.result-container {
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    justify-content: space-between;
+
+    background-color:#2678bb7d;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+li {
+    color: white
+}
