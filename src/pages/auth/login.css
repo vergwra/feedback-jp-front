@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+
 img{
     background-color: #08375F;
 }
@@ -17,7 +20,7 @@ a{
     border: 50rem;
     justify-content: center;
     align-items: self-start;
-    margin: 3rem;
+    margin-top: 3rem;
     font-size:large;
     margin-bottom: 2rem;;
     width: 50rem;
@@ -26,8 +29,30 @@ a{
     gap: 1rem;
 }
 
+.inputLogin {
+    background-color: #0d72c4;
+    background-color: #fffffff0;
+    background-color: #03030308;
+    background-color: #0000003f;
+    border: none;
+    height: 3rem;
+    width:42rem;
+    border-radius: 10px;
+    padding: 0 1rem;
+    color: white;
+    border: solid;
+    border-style: none;
+}
 
-.middle{
+.loginInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.middleLogin{
     align-items: flex-end;
     display: flex;
     flex-direction: column;
@@ -39,5 +64,17 @@ a{
 
 .loginTitle{
     display: flex;
-    align-items: self-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.entrar {
+    background-color: #0D71c4;   
+    width: 8rem;
+}
+
+.fontTitle {
+    font-family:  'Archivo', sans-serif;
+    font-size: 4rem;
 }

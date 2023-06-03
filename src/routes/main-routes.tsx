@@ -10,7 +10,7 @@ const auth_routes = createBrowserRouter([
         element: <Home/>
     },
     {
-        path: "/questionario",
+        path: "/avaliacao",
         element: <Questionario/>
     },{
         path: "/criar-perguntas",

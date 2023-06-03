@@ -119,7 +119,7 @@ function Questionario() {
             questions.length > 0 ? (
                 <div className='middle'>
                     <div className='backgroundQuestion'>
-                    <div className='middleQuestion'>
+                        <div className='middleQuestion'>
                             <h1 className='title'>{currentQuestion?.content}</h1>
                             <div className='buttons'>
                                     <button className={`${note === 3 ? "active-button" : "unactive-button"}`} onClick={(setNoteToTree)}>

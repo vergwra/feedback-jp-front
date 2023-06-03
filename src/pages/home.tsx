@@ -28,7 +28,7 @@ function Home() {
         <Header/>
         <div className='subreader'>
           <button onClick={handleSignOut}>Sign out</button>
-          <a href='#'>Tela de avaliação</a>
+          <a href='/avaliacao'>Tela de avaliação</a>
           <a href='/criar-perguntas'>Criação de perguntas</a>
           <a href='/resultados'>Resultados</a>
         </div>
