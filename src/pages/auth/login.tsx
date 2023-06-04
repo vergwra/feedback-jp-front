@@ -3,8 +3,11 @@ import { useAuth } from '../../hooks/auth-provider';
 
 import "./login.css"
 import Header from '../../components/header';
+import { useLoading } from '../../hooks/loading-provider';
+import { Dna } from 'react-loader-spinner';
 
 function Login() {
+    const { isLoading, stopLoading, startLoading } = useLoading();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -12,6 +15,7 @@ function Login() {
 
     async function handleLogin() {
         try {
+            startLoading();
             await signIn({
                 email,
                 password
@@ -20,6 +24,9 @@ function Login() {
         catch {
             setEmail("")
             setPassword("")
+        }
+        finally {
+            stopLoading();
         }
     }
 
@@ -39,11 +46,16 @@ function Login() {
                 </div>
                 <div className='loginInput'>
                     <p>Senha:</p>
-                    <input value={password} className='inputLogin' onChange={e=> setPassword(e.target.value)} placeholder="senha"></input>
+                    <input type='password' value={password} className='inputLogin' onChange={e=> setPassword(e.target.value)} placeholder="senha"></input>
                 </div>
                 <div  className='loginInput'>
-                    <a>Esqueceu sua senha?</a>
-                    <button className='entrar' onClick={handleLogin}>Entrar</button>
+                    <a href='#'>Esqueceu sua senha?</a>
+                    <div>
+                        {
+                            isLoading ? <Dna/> : <button className='entrar' onClick={handleLogin}>Entrar</button>
+                        }
+                    </div>
+                    
                 </div>
             </div>
             <div>

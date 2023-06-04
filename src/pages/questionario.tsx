@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useQuestion } from '../hooks/question-provider';
 import api from '../services/api';
 import "./questionario.css"
+import { useLoading } from '../hooks/loading-provider';
+import { Dna } from "react-loader-spinner";
 
 interface ICurrentQuestion {
     id: string;
@@ -23,9 +25,12 @@ function Questionario() {
     const [obs, setObs] = useState("");
     const [finished, setFinished] = useState(false);
     const [active, setActive] = useState(-1);
+    const { isLoading, startLoading, stopLoading } = useLoading();
 
     async function startQuestionario() {
+        startLoading();
         const _questions = await getAllQuestions();
+        stopLoading();
         setCurrentQuestion(_questions[0])
         setCurrentResponses([])
         setCurrentIndex(0)
@@ -34,11 +39,7 @@ function Questionario() {
     }
 
     const responseQuestionario = useCallback(async () => {
-        console.log({
-            question_id: currentQuestion.id,
-            note,
-            obs: obs
-        })
+        startLoading();
         await api.post("/quiz/response", {
             responses: [...currentResponses, {
                 question_id: currentQuestion.id,
@@ -46,6 +47,7 @@ function Questionario() {
                 obs: obs
             }]
         })
+        stopLoading();
     }, [currentQuestion.id, currentResponses, note, obs])
 
     const responseCurrentQuestion = useCallback(() => {
@@ -74,7 +76,9 @@ function Questionario() {
         if (currentIndex + 1 >= questions.length) {
             //mandar resposta
             setFinished(true);
+            startLoading();
             await responseQuestionario();
+            stopLoading();
 
             console.log("CABOOOOOOOOOOOOOOOo")
 
@@ -109,7 +113,9 @@ function Questionario() {
             <div className='middle'>
                 <div className='backgroundQuestion2'>
                         <h1>Obrigado</h1>
-                        <button onClick={startQuestionario}>Iniciar outra avaliação</button>
+                        {
+                            isLoading ? <Dna/> : <button onClick={startQuestionario}>Iniciar outra avaliação</button>
+                        }
                 </div>
             </div>
         )
@@ -144,7 +150,9 @@ function Questionario() {
                 <div className='middle'>
                     <div className='backgroundQuestion2'>
                         <h1>Avaliação do serviço médico</h1>
-                        <button onClick={startQuestionario}>Iniciar</button>
+                        {
+                            isLoading ? <Dna/> : <button onClick={startQuestionario}>Iniciar</button>
+                        }
                     </div>
                 </div>
             )

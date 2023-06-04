@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { AuthProvider } from './hooks/auth-provider';
 import { QuestionProvider } from './hooks/question-provider';
-import Header from './components/header';
+import { LoadingProvider } from './hooks/loading-provider';
 
 
 const root = ReactDOM.createRoot(
@@ -14,8 +14,9 @@ root.render(
   <React.StrictMode>
     <AuthProvider>
       <QuestionProvider>
-
-        <App></App>
+        <LoadingProvider>
+          <App></App>
+        </LoadingProvider>
       </QuestionProvider>
     </AuthProvider>
   </React.StrictMode>
