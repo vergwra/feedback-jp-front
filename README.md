@@ -1,3 +1,4 @@
+- Instale as dependencias (npm install)
 - Rode npm start
-- Rode o backend
+- Rode o backend (https://github.com/sergipe085/feedback-api)
 - Pronto
